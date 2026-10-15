@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "tialink": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "http://192.168.1.78:8080/mcp",
+        "--allow-http",
+        "--header",
+        "Authorization: Bearer <YOUR_API_TOKEN>"
+      ]
+    }
+  }
+}

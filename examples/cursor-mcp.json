@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "tialink": {
+      "url": "http://192.168.1.78:8080/mcp",
+      "headers": {
+        "Authorization": "Bearer <YOUR_API_TOKEN>"
+      }
+    }
+  }
+}

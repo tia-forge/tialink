@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "tialink-token",
+      "description": "TiaLink API token",
+      "password": true
+    }
+  ],
+  "servers": {
+    "tialink": {
+      "type": "http",
+      "url": "http://192.168.1.78:8080/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:tialink-token}"
+      }
+    }
+  }
+}

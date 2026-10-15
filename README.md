@@ -36,6 +36,13 @@ AI agent (MCP client)
 
 ---
 
+## Getting started
+
+1. **Check the machine** — Windows, a licensed TIA Portal V19, and the Windows account in the local *Siemens TIA Openness* group. Full checklist: **[install.md](./install.md)**.
+2. **Get an evaluation build** — TiaLink is in early access and has no public download yet. Requests go through the [product page](https://tia.hubwiz.com/tia-link) or an issue in this repository.
+3. **Point your MCP client at the gateway** — ready-made configurations for Claude Code, Cursor, VS Code and Claude Desktop are in **[examples/](./examples/README.md)**.
+4. **Verify** — list the tools, read a scratch project, then create one block and require the compile result. If step three fails, see the troubleshooting table in [install.md](./install.md#7-troubleshooting).
+
 ## Deployment
 
 - TiaLink runs on the **same Windows machine as TIA Portal** (Openness only runs where TIA Portal is installed).
@@ -73,7 +80,7 @@ TiaLink is **not tied to a specific vendor** — the same gateway works with dif
 }
 ```
 
-Replace `192.168.1.78` with the IP or hostname of the machine running TiaLink, and `<YOUR_API_TOKEN>` with your configured token.
+Replace `192.168.1.78` with the IP or hostname of the machine running TiaLink, and `<YOUR_API_TOKEN>` with your configured token. Configurations for specific clients — including one that reads the token from an environment variable instead of the file — are in [examples/](./examples/README.md).
 
 ---
 
