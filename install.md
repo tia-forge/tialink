@@ -35,19 +35,27 @@ Check these before requesting a build — most setup failures are one of the fir
 
 > Working inside a plant network with no outbound internet? That is the intended deployment. Put TiaLink and the client on the same subnet and do not expose the port beyond it.
 
-## 3. Access
+## 3. Download, licence and access
 
-TiaLink is in early access and is **not publicly downloadable yet**. Evaluations are arranged with the vendor:
+**Download:** [TiaLink 1.1.0.0](https://tia.hubwiz.com/download/TiaLink-1.1.0.0.zip) (Windows, 64-bit).
+SHA-256: `728D358D608360A03EA7F7BE16F1B89BD0928E37F2DF27929D329CFE9D2C9705` — verify the archive before running it. The package is signed, but a fresh certificate still triggers SmartScreen for the first downloads. It extracts to a `TiaLink\` folder with five files; read the `README.txt` inside it first.
 
-1. Request access via the product page — https://tia.hubwiz.com/tia-link
-2. Or open an issue in this repository describing the machine you want to evaluate it on (Windows version, TIA Portal version, whether PLCSIM Advanced is available, and which AI client you intend to connect)
-3. You receive the build together with the setup steps for that build, plus an API token for the gateway
+**Install — four steps:**
 
-Every evaluation build is delivered with written install steps specific to that build; those steps plus this checklist are everything you need.
+1. Copy the whole folder to its final location, e.g. `C:\Program Files\TiaLink\`. Copy first, run later: the Openness whitelist records the exact path and file hash.
+2. Run `TiaLink.Helper.exe` and click the one-click repair (one UAC prompt). Sign out or reboot if it asks.
+3. Start `TiaLink.exe` **as a normal user** — never as administrator. It serves a local HTTP API and connects to TIA Portal in the background.
+4. Open `http://localhost:8080/`.
+
+**Licence:** without one TiaLink is read-only (it never blocks read access or modifies the project unasked). A **30-day full-feature trial** and paid licences are issued offline: on the activation page, copy the **machine code** and download the **`.tlreq`** request file, send both to **support@hubwiz.com** (or the WeChat QR on the product page), then install the `.lic` you receive. Licences are machine-bound and work fully offline; replacing a mainboard or disk may require a re-issue.
+
+**Pricing:** personal use is **¥99.9/month** or **¥999/year** (China pricing). Multi-seat, floating and air-gapped enterprise deployments are quoted — write to **support@hubwiz.com**.
+
+**API access:** configure an API token before exposing the gateway on a shared LAN (see §6).
 
 ## 4. Connect an MCP client
 
-1. Configure the gateway with a token and a listening port (this part is described in the setup steps that come with your build).
+1. Configure the gateway with a token and a listening port (see the `README.txt` inside the package, and §6 below).
 2. Note the address — for example `http://192.168.1.78:8080/mcp`.
 3. Add the server to your client using one of the ready-made configurations:
 
