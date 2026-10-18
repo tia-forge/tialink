@@ -35,10 +35,9 @@ Check these before requesting a build — most setup failures are one of the fir
 
 > Working inside a plant network with no outbound internet? That is the intended deployment. Put TiaLink and the client on the same subnet and do not expose the port beyond it.
 
-## 3. Download, licence and access
+## 3. Buy, download and licence
 
-**Download:** [TiaLink 1.1.0.0](https://tia.hubwiz.com/download/TiaLink-1.1.0.0.zip) (Windows, 64-bit).
-SHA-256: `728D358D608360A03EA7F7BE16F1B89BD0928E37F2DF27929D329CFE9D2C9705` — verify the archive before running it. The package is signed, but a fresh certificate still triggers SmartScreen for the first downloads. It extracts to a `TiaLink\` folder with five files; read the `README.txt` inside it first.
+**Buy:** TiaLink is paid software — **¥99/month or ¥999/year** (China). Purchase on the [product page](https://tia.hubwiz.com/tia-link); after the WeChat Pay payment the download link and the setup steps appear immediately. **Keep your order number** — the licence request needs it, and it lets you download again. The package is signed; a fresh certificate still triggers SmartScreen on the first downloads. It extracts to a `TiaLink\` folder with five files; read the `README.txt` inside it first.
 
 **Install — four steps:**
 
@@ -47,9 +46,9 @@ SHA-256: `728D358D608360A03EA7F7BE16F1B89BD0928E37F2DF27929D329CFE9D2C9705` — 
 3. Start `TiaLink.exe` **as a normal user** — never as administrator. It serves a local HTTP API and connects to TIA Portal in the background.
 4. Open `http://localhost:8080/`.
 
-**Licence:** without one TiaLink is read-only (it never blocks read access or modifies the project unasked). A **30-day full-feature trial** and paid licences are issued offline: on the activation page, copy the **machine code** and download the **`.tlreq`** request file, send both to **support@hubwiz.com** (or the WeChat QR on the product page), then install the `.lic` you receive. Licences are machine-bound and work fully offline; replacing a mainboard or disk may require a re-issue.
+**Licence:** TiaLink is read-only without a licence (it never blocks read access or modifies the project unasked). On the activation page (`http://localhost:8080/`) copy the **machine code** and download the **`.tlreq`** request file, then send both to **support@hubwiz.com** with your order number. The machine-bound `.lic` is issued for that machine and works fully offline; replacing a mainboard or disk may require a re-issue.
 
-**Pricing:** personal use is **¥99.9/month** or **¥999/year** (China pricing). Multi-seat, floating and air-gapped enterprise deployments are quoted — write to **support@hubwiz.com**.
+**Enterprise:** multi-seat, floating and air-gapped deployments are quoted — write to **support@hubwiz.com**.
 
 **API access:** configure an API token before exposing the gateway on a shared LAN (see §6).
 

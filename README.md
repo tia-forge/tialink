@@ -39,8 +39,7 @@ AI agent (MCP client)
 ## Getting started
 
 1. **Check the machine** — Windows, a licensed TIA Portal V19, and the Windows account in the local *Siemens TIA Openness* group. Full checklist: **[install.md](./install.md)**.
-2. **Download the evaluation build** — **TiaLink 1.1.0.0** (Windows, 64-bit): https://tia.hubwiz.com/download/TiaLink-1.1.0.0.zip
-   SHA-256: `728D358D608360A03EA7F7BE16F1B89BD0928E37F2DF27929D329CFE9D2C9705` — verify it before running. The package is code-signed; a fresh certificate still triggers SmartScreen on the first downloads. It runs **read-only until a licence is installed**; a 30-day full-feature trial licence is issued offline (see FAQ).
+2. **Buy and download** — TiaLink is paid software: **¥99/month or ¥999/year** (China). Buy on the [product page](https://tia.hubwiz.com/tia-link); the download link and the setup steps appear immediately after the WeChat Pay payment. Keep the order number — the licence request needs it.
 3. **Point your MCP client at the gateway** — ready-made configurations for Claude Code, Cursor, VS Code and Claude Desktop are in **[examples/](./examples/README.md)**.
 4. **Verify** — list the tools, read a scratch project, then create one block and require the compile result. If step three fails, see the troubleshooting table in [install.md](./install.md#7-troubleshooting).
 
@@ -116,18 +115,17 @@ No. TiaLink is agent-agnostic — any MCP client that supports Streamable HTTP w
 **Can AI-generated PLC code be used directly?**
 AI handles the verifiable software part, but safety functions must be implemented in hardware (safety relay / safety PLC), hard interlocks must be pneumatic or electrical, and time/sensor tuning must be done on the real machine. TiaLink does not replace safety responsibility.
 
-**How do I get a licence?**
-TiaLink is read-only until a licence file is installed. A 30-day full-feature trial is issued offline: start TiaLink, open `http://localhost:8080/`, and send the machine code plus the generated `.tlreq` request file to **support@hubwiz.com** (or through the WeChat QR on the product page). The `.lic` file that comes back is installed on the same page. Licences are machine-bound and work fully offline.
-
 **What does it cost?**
-A 30-day full-feature trial is free. Personal licences are **¥99.9/month** or **¥999/year** (China pricing; 12 months for the price of 10). Multi-seat, floating and air-gapped enterprise deployments are quoted — write to **support@hubwiz.com**.
+**¥99/month or ¥999/year** (China; the annual licence saves ¥189). Multi-seat, floating and air-gapped enterprise deployments are quoted — write to **support@hubwiz.com**.
+
+**How do I buy it and get a licence?**
+Buy on the product page: after the WeChat Pay payment, the page immediately shows the download link and the setup steps — no account or form required. Install TiaLink as a normal user, open `http://localhost:8080/`, and send the machine code plus the generated `.tlreq` request file to **support@hubwiz.com**. The machine-bound `.lic` is issued for that machine and works fully offline.
 
 ---
 
 ## Links
 
-- **Product page**: https://tia.hubwiz.com/tia-link
-- **Download (TiaLink 1.1.0.0)**: https://tia.hubwiz.com/download/TiaLink-1.1.0.0.zip — SHA-256 `728D358D608360A03EA7F7BE16F1B89BD0928E37F2DF27929D329CFE9D2C9705`
+- **Product page / buy**: https://tia.hubwiz.com/tia-link (WeChat Pay; the download link appears after payment)
 - **Publisher**: 汇智网 — https://www.hubwiz.com/
 
 ---
