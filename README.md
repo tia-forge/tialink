@@ -38,7 +38,7 @@ AI agent (MCP client)
 
 ## Getting started
 
-1. **Check the machine** — Windows, a licensed TIA Portal V19, and the Windows account in the local *Siemens TIA Openness* group. Full checklist: **[install.md](./install.md)**.
+1. **Check the machine** — Windows, a licensed TIA Portal **V19 or V20** (V21 is not supported yet), and the Windows account in the local *Siemens TIA Openness* group. Full checklist: **[install.md](./install.md)**.
 2. **Buy and download** — TiaLink is paid software: **¥99/month or ¥999/year** (China). Buy on the [product page](https://tia.hubwiz.com/tia-link); the download link and the setup steps appear immediately after the WeChat Pay payment. Keep the order number — the licence request needs it.
 3. **Point your MCP client at the gateway** — ready-made configurations for Claude Code, Cursor, VS Code and Claude Desktop are in **[examples/](./examples/README.md)**.
 4. **Verify** — list the tools, read a scratch project, then create one block and require the compile result. If step three fails, see the troubleshooting table in [install.md](./install.md#7-troubleshooting).
