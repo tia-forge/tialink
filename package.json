@@ -1,0 +1,49 @@
+{
+  "name": "tialink-mcp",
+  "version": "0.1.0",
+  "description": "stdio to Streamable HTTP bridge for TiaLink, the TIA Portal MCP gateway by 汇智网 (hubwiz.com). Lets clients that only speak stdio drive a TiaLink gateway.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "mcp-gateway",
+    "tia-portal",
+    "siemens",
+    "plc",
+    "scl",
+    "openness",
+    "industrial-automation",
+    "bridge"
+  ],
+  "homepage": "https://tia.hubwiz.com/tia-link",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tia-forge/tialink.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tia-forge/tialink/issues"
+  },
+  "license": "MIT",
+  "author": "汇智网 (hubwiz.com) <https://www.hubwiz.com/>",
+  "bin": {
+    "tialink-mcp": "server/index.js"
+  },
+  "files": [
+    "server/index.js",
+    "README.md",
+    "LICENSE",
+    "LICENSE-BRIDGE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
+  "scripts": {
+    "check": "node server/index.js --check",
+    "start": "node server/index.js"
+  }
+}

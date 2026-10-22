@@ -1,0 +1,9 @@
+# Files kept out of the .mcpb bundle.
+# The bundle only needs the bridge, its manifest, and the docs a user reads
+# before wiring it up. Build/tooling files stay in the repository.
+
+Dockerfile
+.github/
+.mcpbignore
+tialink-*.mcpb
+node_modules/

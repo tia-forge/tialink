@@ -68,7 +68,64 @@ Check these before requesting a build — most setup failures are one of the fir
 
 4. Restart the client so it picks up the new server, then run the smoke test below.
 
+### 4.1 If your client only speaks stdio
+
+Some desktop hosts and one-click bundles can only launch **stdio** servers.
+For those, use the adapter in [`server/index.js`](./server/index.js), which
+forwards JSON-RPC between stdio and the gateway's HTTP endpoint. It adds no
+functionality and does not unlock anything — the gateway still has to be
+installed, licensed and running.
+
+```bash
+# Machine that runs the MCP client
+TIALINK_URL=http://<gateway-host>:8080/mcp npx tialink-mcp
+
+# With a token
+TIALINK_URL=http://<gateway-host>:8080/mcp TIALINK_TOKEN=<token> npx tialink-mcp
+```
+
+Client configuration for the stdio case — the client launches the adapter,
+the adapter talks to the gateway:
+
+```json
+{
+  "mcpServers": {
+    "tialink": {
+      "command": "npx",
+      "args": ["-y", "tialink-mcp"],
+      "env": {
+        "TIALINK_URL": "http://192.168.1.78:8080/mcp",
+        "TIALINK_TOKEN": "<token>"
+      }
+    }
+  }
+}
+```
+
+Other delivery formats for the same adapter:
+
+| Format | How |
+|---|---|
+| Desktop bundle (`.mcpb`) | `npx @anthropic-ai/mcpb pack .` — then install the produced `.mcpb` in the host |
+| Container | `docker build -t tialink-mcp .` then `docker run -i --rm -e TIALINK_URL=... tialink-mcp` |
+
+`TIALINK_TIMEOUT_MS` defaults to **600000** (10 minutes). Compile, download and
+simulation calls are slow; do not lower it to the value you would use for a
+chat completion.
+
 ## 5. Verify the connection
+
+**Step 0 — the adapter can see the gateway** (only if you are using the stdio
+adapter; skip otherwise):
+
+```bash
+TIALINK_URL=http://<gateway-host>:8080/mcp TIALINK_TOKEN=<token> npx tialink-mcp --check
+```
+
+A healthy answer prints the server name and version, the negotiated protocol
+version, the session id, and the tool list. `401` means the token is wrong or
+missing; `404` means the path is not `/mcp`; a connection error means the
+gateway is not running or the port is firewalled.
 
 **Step 1 — the agent can see the tools.** Ask your client to list the TiaLink tools. You should get tools for devices and modules, subnets and IO systems, blocks and SCL import, compile, HMI screens, and simulation.
 

@@ -43,6 +43,35 @@ AI agent (MCP client)
 3. **Point your MCP client at the gateway** — ready-made configurations for Claude Code, Cursor, VS Code and Claude Desktop are in **[examples/](./examples/README.md)**.
 4. **Verify** — list the tools, read a scratch project, then create one block and require the compile result. If step three fails, see the troubleshooting table in [install.md](./install.md#7-troubleshooting).
 
+### If your client only speaks stdio
+
+TiaLink serves **Streamable HTTP**. Most clients handle that directly, but some
+desktop hosts and one-click bundles can only launch **stdio** servers. For those
+there is a small adapter in this repository, **[`server/index.js`](./server/index.js)** —
+it forwards JSON-RPC between stdio and the gateway and adds no functionality of
+its own.
+
+> ⚠️ **The adapter is not the product.** It needs a licensed TiaLink gateway
+> already running. Without one it fails on the first request — by design.
+
+```bash
+# Run the adapter against a local gateway
+TIALINK_URL=http://127.0.0.1:8080/mcp npx tialink-mcp
+
+# Pre-flight: is the gateway reachable, is the token right, which tools exist?
+TIALINK_URL=http://192.168.1.78:8080/mcp TIALINK_TOKEN=... npx tialink-mcp --check
+```
+
+| Path | What you get |
+|---|---|
+| `npx tialink-mcp` | stdio ↔ HTTP adapter (npm, no dependencies, Node ≥ 18) |
+| [`manifest.json`](./manifest.json) + `.mcpb` | one-click desktop bundle — `npx @anthropic-ai/mcpb pack .` |
+| [`Dockerfile`](./Dockerfile) | the same adapter in a container, for Linux CI and sandboxed agents |
+
+Configuration is by environment variable: `TIALINK_URL` (default
+`http://127.0.0.1:8080/mcp`), `TIALINK_TOKEN`, `TIALINK_TIMEOUT_MS` (default
+600000 — compile and download calls are slow on purpose).
+
 ## Deployment
 
 - TiaLink runs on the **same Windows machine as TIA Portal** (Openness only runs where TIA Portal is installed).
@@ -134,3 +163,4 @@ Buy on the product page: after the WeChat Pay payment, the page immediately show
 
 - **Documentation** in this repository is licensed under **CC BY 4.0** — see [LICENSE](./LICENSE).
 - The **TiaLink software itself** (the MCP gateway / server) is **commercial software** and is not covered by that license. All rights reserved.
+- The **stdio bridge** in [`server/`](./server/index.js) — plus its `package.json`, `manifest.json` and `Dockerfile` — is **MIT licensed** — see [LICENSE-BRIDGE](./LICENSE-BRIDGE). It is a thin transport adapter: fork it, vendor it, ship it in your own agent tooling. A licensed TiaLink gateway is still required at runtime.

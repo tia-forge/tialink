@@ -1,0 +1,68 @@
+{
+  "manifest_version": "0.3",
+  "name": "tialink",
+  "display_name": "TiaLink — TIA Portal MCP gateway",
+  "version": "0.1.0",
+  "description": "Drive a Siemens TIA Portal project from any MCP client: create blocks, write SCL, compile, download to PLCSIM, read back. Requires a licensed, running TiaLink gateway.",
+  "long_description": "**This bundle is a connector, not the product.** It contains only a stdio↔HTTP bridge (a few hundred lines of JavaScript) and adds no functionality of its own.\n\nTiaLink is a TIA Portal MCP gateway by 汇智网 (hubwiz.com). It exposes Siemens TIA Portal **Openness** as MCP tools so an AI agent can: configure hardware and networks; create FB/FC/DB/UDT blocks and write SCL; import SimaticML (including LAD); compile, save, export and archive projects; download to S7-PLCSIM Advanced; and read the project model, block interfaces and hardware tree back for verification.\n\n**Before installing this bundle you need:**\n\n1. A licensed TiaLink installation on the same Windows machine as TIA Portal (V19 / V20 supported, V21 not yet).\n2. Its gateway running and listening — for example `http://192.168.1.78:8080/mcp`.\n3. The gateway token, if one was configured (auth header is `Authorization: Bearer <token>`).\n\nThen set the gateway URL and token below. If the gateway is on another machine, use that machine's LAN address — do not forward the port to the internet. Project data stays on-premises by design.\n\nWithout a running gateway this bundle will fail on the first request. That is expected: it is a thin transport adapter for the Streamable HTTP MCP endpoint that TiaLink already serves.",
+  "author": {
+    "name": "汇智网 (hubwiz.com)",
+    "url": "https://www.hubwiz.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tia-forge/tialink"
+  },
+  "homepage": "https://tia.hubwiz.com/tia-link",
+  "documentation": "https://github.com/tia-forge/tialink/blob/main/install.md",
+  "support": "https://github.com/tia-forge/tialink/issues",
+  "license": "MIT",
+  "keywords": [
+    "tia-portal",
+    "siemens",
+    "plc",
+    "scl",
+    "openness",
+    "mcp",
+    "industrial-automation",
+    "plcsim"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "TIALINK_URL": "${user_config.gateway_url}",
+        "TIALINK_TOKEN": "${user_config.gateway_token}"
+      }
+    }
+  },
+  "user_config": {
+    "gateway_url": {
+      "type": "string",
+      "title": "TiaLink gateway URL",
+      "description": "The gateway's Streamable HTTP endpoint, including the /mcp path. Example: http://127.0.0.1:8080/mcp",
+      "required": true,
+      "default": "http://127.0.0.1:8080/mcp"
+    },
+    "gateway_token": {
+      "type": "string",
+      "title": "Gateway token",
+      "description": "Sent as 'Authorization: Bearer <token>'. Leave empty if the gateway was configured without a token.",
+      "required": false,
+      "sensitive": true
+    }
+  },
+  "compatibility": {
+    "platforms": [
+      "win32"
+    ],
+    "runtimes": {
+      "node": ">=18"
+    }
+  }
+}
