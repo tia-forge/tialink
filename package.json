@@ -1,6 +1,7 @@
 {
   "name": "tialink-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "mcpName": "io.github.tia-forge/tialink",
   "description": "stdio to Streamable HTTP bridge for TiaLink, the TIA Portal MCP gateway by 汇智网 (hubwiz.com). Lets clients that only speak stdio drive a TiaLink gateway.",
   "keywords": [
     "mcp",
