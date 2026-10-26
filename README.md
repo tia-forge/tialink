@@ -124,6 +124,7 @@ TiaLink is part of **TIA Forge**, a TIA Portal engineering agent suite by 汇智
 ## Where else to find us
 
 - **[Awesome PLC AI](https://github.com/tia-forge/awesome-plc-ai#readme)** — a curated list of AI tools, agents and MCP bridges for PLC engineering (Siemens TIA Portal, CODESYS, TwinCAT, Studio 5000, GX Works), maintained by 汇智网. TiaLink is listed there alongside the alternatives, with a disclosure.
+- **[SkillHub](https://www.skillhub.cn/skills/indiv-tiaforge/tialink-tia-portal?utm_source=github&utm_medium=readme)** — the gateway packaged as an Agent Skill (`skillhub install tialink-tia-portal`): prerequisites, connection snippet, first-session verification and safety rules, written for the agent that reads it rather than for a human skimming a README. The same publisher also ships three companion skills: [LadDoc → SimaticML](https://www.skillhub.cn/skills/indiv-tiaforge/laddoc-cloud?utm_source=github&utm_medium=readme), [cloud simulation](https://www.skillhub.cn/skills/indiv-tiaforge/plc-cloud-sim?utm_source=github&utm_medium=readme) and [TIA Portal docs search](https://www.skillhub.cn/skills/indiv-tiaforge/tia-portal-docs?utm_source=github&utm_medium=readme).
 
 ---
 
