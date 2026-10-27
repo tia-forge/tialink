@@ -61,6 +61,10 @@ no,name,Start,StopPermit,Fault,RunDelay,Motor1,Motor2
 
 **先问一句"真的需要复制块吗"**：能用「1 个 FB + N 个背景 DB + 数组」解决的就别复制块。复制块只在"代码要分叉"时才值得。
 
+## 用 agent 做同一件事
+
+不想敲命令时，把 [`agent-prompt.md`](./agent-prompt.md) 里的整段提示词粘给接了 TiaLink MCP 的客户端（Claude Code / Cursor / VS Code），连点表一起给它。**适用规模 ≤10 台**；再多就让它跑这个脚本，把输出解释给你听。
+
 ## 用法
 
 ```bash
