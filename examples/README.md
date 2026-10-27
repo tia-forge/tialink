@@ -35,6 +35,16 @@ setx TIALINK_API_TOKEN "<YOUR_API_TOKEN>"         # Windows, then reopen the ter
 
 **Claude Desktop** — Desktop has no built-in HTTP transport, so the config runs the `mcp-remote` shim through `npx`, which needs Node.js on the same machine. Two caveats: the shim is a third-party package, and Desktop keeps its config in plain text, so the token is readable by anything that can open the file. If that matters in your environment, use a client with secret storage instead.
 
+## Batch jobs instead of one-offs
+
+MCP clients are good at single operations ("create this block"). Repeating an operation across 20 devices is a different problem, and it is the one that eats project hours. [`batch-copy/`](./batch-copy/) is a dependency-free Node script that clones one template FB into N devices from a CSV spec — IO addresses, block numbers and per-device parameters all come from the spreadsheet — then builds the tag table and the call sites, with a dry run before anything is written:
+
+```bash
+node examples/batch-copy/tialink-batch.mjs clone --device PLC_1   --template FB_MotorSeq --spec examples/batch-copy/examples/fans.csv   --mode copy --base 200 --db-base 200 --tags Fans_IO --calls FB_FanCalls --dry
+```
+
+It talks to the REST API (`/api/v1/...`) rather than MCP, so it also works as a reference for the non-agent path. Details, measured timings and the SimaticML traps it encodes: [`batch-copy/README.md`](./batch-copy/README.md).
+
 ## Raw request shape
 
 For a client we have not listed, or for a manual check, TiaLink speaks MCP **Streamable HTTP**: a JSON-RPC `POST` to `/mcp` with an `Authorization: Bearer` header and both content types accepted.
