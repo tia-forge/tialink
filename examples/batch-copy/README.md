@@ -131,6 +131,7 @@ node tialink-batch.mjs import --zip plc1.zip --to PLC_2 --chunk 100
 ## 相关
 
 - [TiaLink](https://tia.hubwiz.com/tia-link) —— 把 TIA Portal Openness 封装成 HTTP / MCP 网关，本脚本通过它的 REST 接口工作
+- [博途批量复制设备程序：用点表替代复制粘贴](https://www.hubwiz.com/blog/tia-portal-batch-copy-from-spreadsheet/) —— 这份 README 的来源文章：四类差异、实测耗时与六个坑
 - [梯形图转 SCL 迁移指南](https://www.hubwiz.com/blog/lad-to-scl-migration-guide-tia-portal/) —— 同类"能自动做什么、哪些必须人工"的边界讨论
 
 ## License
