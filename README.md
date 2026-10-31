@@ -146,7 +146,7 @@ No. TiaLink is agent-agnostic — any MCP client that supports Streamable HTTP w
 AI handles the verifiable software part, but safety functions must be implemented in hardware (safety relay / safety PLC), hard interlocks must be pneumatic or electrical, and time/sensor tuning must be done on the real machine. TiaLink does not replace safety responsibility.
 
 **What does it cost?**
-**¥99/month** (China). Annual, multi-seat, floating and air-gapped enterprise deployments are quoted on request — write to **support@hubwiz.com**.
+**¥99/month** (China). Multi-seat, floating and air-gapped enterprise deployments are quoted on request — write to **support@hubwiz.com**.
 
 **Is TiaLink open source?**
 No. TiaLink is **commercial, closed-source software** — the gateway and its engine are not open source. What *is* MIT-licensed is the stdio↔HTTP transport bridge in [`server/`](./server/index.js), a thin adapter that does nothing without a licensed, running gateway. Documentation in this repository is CC BY 4.0.
