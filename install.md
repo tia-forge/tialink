@@ -37,7 +37,7 @@ Check these before requesting a build — most setup failures are one of the fir
 
 ## 3. Buy, download and licence
 
-**Buy:** TiaLink is paid software — **¥99/month or ¥999/year** (China). Purchase on the [product page](https://tia.hubwiz.com/tia-link); after the WeChat Pay payment the download link and the setup steps appear immediately. **Keep your order number** — the licence request needs it, and it lets you download again. The package is signed; a fresh certificate still triggers SmartScreen on the first downloads. It extracts to a `TiaLink\` folder with five files; read the `README.txt` inside it first.
+**Buy:** TiaLink is paid software — **¥99/month** (China). Purchase on the [product page](https://tia.hubwiz.com/tia-link); after the WeChat Pay payment the download link and the setup steps appear immediately. **Keep your order number** — the licence request needs it, and it lets you download again. The package is signed; a fresh certificate still triggers SmartScreen on the first downloads. It extracts to a `TiaLink\` folder with five files; read the `README.txt` inside it first.
 
 **Install — four steps:**
 
