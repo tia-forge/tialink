@@ -148,6 +148,9 @@ AI handles the verifiable software part, but safety functions must be implemente
 **What does it cost?**
 **¥99/month** (China). Annual, multi-seat, floating and air-gapped enterprise deployments are quoted on request — write to **support@hubwiz.com**.
 
+**Is TiaLink open source?**
+No. TiaLink is **commercial, closed-source software** — the gateway and its engine are not open source. What *is* MIT-licensed is the stdio↔HTTP transport bridge in [`server/`](./server/index.js), a thin adapter that does nothing without a licensed, running gateway. Documentation in this repository is CC BY 4.0.
+
 **How do I buy it and get a licence?**
 Buy on the product page: after the WeChat Pay payment, the page immediately shows the download link and the setup steps — no account or form required. Install TiaLink as a normal user, open `http://localhost:8080/`, and send the machine code plus the generated `.tlreq` request file to **support@hubwiz.com**. The machine-bound `.lic` is issued for that machine and works fully offline.
 
@@ -162,6 +165,7 @@ Buy on the product page: after the WeChat Pay payment, the page immediately show
 
 ## License
 
-- **Documentation** in this repository is licensed under **CC BY 4.0** — see [LICENSE](./LICENSE).
-- The **TiaLink software itself** (the MCP gateway / server) is **commercial software** and is not covered by that license. All rights reserved.
-- The **stdio bridge** in [`server/`](./server/index.js) — plus its `package.json`, `manifest.json` and `Dockerfile` — is **MIT licensed** — see [LICENSE-BRIDGE](./LICENSE-BRIDGE). It is a thin transport adapter: fork it, vendor it, ship it in your own agent tooling. A licensed TiaLink gateway is still required at runtime.
+**TiaLink is commercial, closed-source software.** The gateway and its engine are not open source, and no part of them is distributed in this repository. All rights reserved.
+
+- **This repository** (documentation, examples) is licensed under **CC BY 4.0** — see [LICENSE](./LICENSE).
+- The **stdio bridge** in [`server/`](./server/index.js) — plus its `package.json`, `manifest.json` and `Dockerfile` — is **MIT licensed** — see [LICENSE-BRIDGE](./LICENSE-BRIDGE). It is a thin transport adapter with no gateway logic: fork it, vendor it, ship it in your own agent tooling. A licensed TiaLink gateway is still required at runtime.
