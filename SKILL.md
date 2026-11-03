@@ -1,6 +1,6 @@
 ---
 name: tialink
-description: Operate Siemens TIA Portal projects through the TiaLink MCP gateway. Use when an AI agent needs to connect to TIA Portal (V19 or V20), configure hardware and networks, create FB/FC/DB/UDT blocks, write SCL, compile, download to S7-PLCSIM for simulation, and read back the project for verification.
+description: Operate Siemens TIA Portal projects through the TiaLink MCP gateway. Use when an AI agent needs to connect to TIA Portal (V19 / V20 / V21), configure hardware and networks, create FB/FC/DB/UDT blocks, write SCL, compile, download to S7-PLCSIM for simulation, and read back the project for verification.
 license: CC-BY-4.0
 metadata:
   version: 1.0.0
@@ -16,7 +16,7 @@ TiaLink exposes Siemens **TIA Portal Openness** capabilities as MCP tools so any
 
 ## Prerequisites
 
-1. **Windows** machine with an installed, licensed **TIA Portal V19 or V20**.
+1. **Windows** machine with an installed, licensed **TIA Portal V19 / V20 / V21**.
 2. The Windows account running the gateway is in the local **Siemens TIA Openness** user group.
 3. TiaLink installed and licensed (commercial software — buy on the [product page](https://tia.hubwiz.com/tia-link)).
 4. Full machine checklist and troubleshooting: **[install.md](./install.md)**.
