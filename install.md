@@ -15,7 +15,7 @@ TiaLink is commercial software in **early access** — see [Access](#access). Th
 | Piece | Where it runs |
 |---|---|
 | TiaLink gateway | The **same Windows machine as TIA Portal** (Siemens Openness only works where TIA Portal is installed) |
-| TIA Portal | On that machine, licensed, currently **V19 or V20** (V21 not supported yet) |
+| TIA Portal | On that machine, licensed, currently **V19 / V20 / V21** (V21 requires TiaLink 1.5.0 or later; no extra prerequisites) |
 | MCP client (Claude Code, Cursor, VS Code, …) | Anywhere — same machine or another machine on the LAN, connecting to `http://<gateway-host>:<port>/mcp` |
 | S7-PLCSIM Advanced | Same machine, **only if** you want the simulation and download tools |
 

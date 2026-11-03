@@ -12,7 +12,7 @@ metadata:
 
 TiaLink exposes Siemens **TIA Portal Openness** capabilities as MCP tools so any MCP-capable AI agent can operate a real TIA Portal project directly: configure hardware and networks, create blocks, write SCL, compile, simulate on S7-PLCSIM, and read results back. It is agent-agnostic (Claude Code, Cursor, VS Code, Tencent WorkBuddy, or any client speaking Streamable HTTP with a Bearer token).
 
-**Supported TIA Portal versions: V19 and V20. V21 is not supported yet.** Do not connect to a V21 installation.
+**Supported TIA Portal versions: V19, V20 and V21.** V21 requires TiaLink 1.5.0 or later.
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ Run this sequence the first time you connect to any machine or project:
 2. **Read** — open a scratch project and read the block list / hardware tree.
 3. **Write** — create one small block, require the compile result, then read it back.
 
-If step 1–3 fails, check [install.md §Troubleshooting](./install.md#7-troubleshooting): account not in the Openness group, gateway project not open, version mismatch (V21 is not supported).
+If step 1–3 fails, check [install.md §Troubleshooting](./install.md#7-troubleshooting): account not in the Openness group, gateway project not open, version mismatch (V21 needs TiaLink 1.5.0+).
 
 ## Core workflows
 
