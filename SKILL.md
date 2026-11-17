@@ -1,6 +1,6 @@
 ---
 name: tialink
-description: Operate Siemens TIA Portal projects through the TiaLink MCP gateway. Use when an AI agent needs to connect to TIA Portal (V19 / V20 / V21), configure hardware and networks, create FB/FC/DB/UDT blocks, write SCL, compile, download to S7-PLCSIM for simulation, and read back the project for verification.
+description: Operate Siemens TIA Portal projects through the TiaLink MCP gateway. Use when an AI agent needs to connect to TIA Portal (V17 / V18 / V19 / V20 / V21), configure hardware and networks, create FB/FC/DB/UDT blocks, write SCL, compile, download to S7-PLCSIM for simulation, and read back the project for verification.
 license: CC-BY-4.0
 metadata:
   version: 1.0.0
@@ -12,11 +12,11 @@ metadata:
 
 TiaLink exposes Siemens **TIA Portal Openness** capabilities as MCP tools so any MCP-capable AI agent can operate a real TIA Portal project directly: configure hardware and networks, create blocks, write SCL, compile, simulate on S7-PLCSIM, and read results back. It is agent-agnostic (Claude Code, Cursor, VS Code, Tencent WorkBuddy, or any client speaking Streamable HTTP with a Bearer token).
 
-**Supported TIA Portal versions: V19, V20 and V21.** V21 requires TiaLink 1.5.0 or later.
+**Supported TIA Portal versions: V17, V18, V19, V20 and V21.** V17 / V18 require TiaLink 1.6.0 or later, V21 requires 1.5.0. The package ships three build folders (`v17-v18/`, `v19-v20/`, `v21/`) — use the one matching the installed TIA Portal.
 
 ## Prerequisites
 
-1. **Windows** machine with an installed, licensed **TIA Portal V19 / V20 / V21**.
+1. **Windows** machine with an installed, licensed **TIA Portal V17 / V18 / V19 / V20 / V21**.
 2. The Windows account running the gateway is in the local **Siemens TIA Openness** user group.
 3. TiaLink installed and licensed (commercial software — buy on the [product page](https://tia.hubwiz.com/tia-link)).
 4. Full machine checklist and troubleshooting: **[install.md](./install.md)**.
@@ -52,7 +52,7 @@ Run this sequence the first time you connect to any machine or project:
 2. **Read** — open a scratch project and read the block list / hardware tree.
 3. **Write** — create one small block, require the compile result, then read it back.
 
-If step 1–3 fails, check [install.md §Troubleshooting](./install.md#7-troubleshooting): account not in the Openness group, gateway project not open, version mismatch (V21 needs TiaLink 1.5.0+).
+If step 1–3 fails, check [install.md §Troubleshooting](./install.md#7-troubleshooting): account not in the Openness group, gateway project not open, version mismatch or wrong build folder (V17 / V18 need TiaLink 1.6.0+, V21 needs 1.5.0+; run the `TiaLink.exe` from `v17-v18/`, `v19-v20/` or `v21/` to match your TIA Portal).
 
 ## Core workflows
 

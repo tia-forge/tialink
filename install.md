@@ -15,7 +15,7 @@ TiaLink is commercial software in **early access** — see [Access](#access). Th
 | Piece | Where it runs |
 |---|---|
 | TiaLink gateway | The **same Windows machine as TIA Portal** (Siemens Openness only works where TIA Portal is installed) |
-| TIA Portal | On that machine, licensed, currently **V19 / V20 / V21** (V21 requires TiaLink 1.5.0 or later; no extra prerequisites) |
+| TIA Portal | On that machine, licensed, currently **V17 / V18 / V19 / V20 / V21** (V17 / V18 require TiaLink 1.6.0 or later, V21 requires 1.5.0 or later; no extra prerequisites) |
 | MCP client (Claude Code, Cursor, VS Code, …) | Anywhere — same machine or another machine on the LAN, connecting to `http://<gateway-host>:<port>/mcp` |
 | S7-PLCSIM Advanced | Same machine, **only if** you want the simulation and download tools |
 
@@ -27,7 +27,7 @@ Check these before requesting a build — most setup failures are one of the fir
 
 | Requirement | Why it matters |
 |---|---|
-| Windows (64-bit) with a **licensed TIA Portal V19 / V20 / V21** installation | Openness is installed with TIA Portal; there is nothing extra to license for the gateway's own API access |
+| Windows (64-bit) with a **licensed TIA Portal V17 / V18 / V19 / V20 / V21** installation | Openness is installed with TIA Portal; there is nothing extra to license for the gateway's own API access |
 | The Windows account that runs the gateway is a member of the local **Siemens TIA Openness** user group | Without group membership, Openness calls fail with authorization errors. Your TIA Portal administrator usually sets this up |
 | A free TCP port for the gateway (default `8080` in our examples), reachable from the client machine | The MCP client talks to the gateway over HTTP; a host firewall that blocks inbound traffic is the most common "agent cannot connect" cause |
 | S7-PLCSIM Advanced installed and licensed *(optional)* | Needed only for the simulation and download-to-virtual-CPU tools |
@@ -151,7 +151,7 @@ If step 2 or 3 fails, see [Troubleshooting](#7-troubleshooting).
 | HTTP `404` on the endpoint | Wrong path: the MCP endpoint is `/mcp`, not the host root |
 | Client connects but shows no tools | Client caches the server list — restart it. Also confirm the client supports Streamable HTTP |
 | Openness errors: authorization, "not permitted", user group | The Windows account running the gateway is not in the local **Siemens TIA Openness** user group |
-| Openness errors mentioning TIA Portal version | Gateway build and installed TIA Portal version do not match (current support: V19 / V20 / V21; V21 needs TiaLink 1.5.0+) |
+| Openness errors mentioning TIA Portal version | Gateway build and installed TIA Portal version do not match (current support: V17 / V18 / V19 / V20 / V21; V17 / V18 need TiaLink 1.6.0+, V21 needs 1.5.0+). The install package ships three build folders — `v17-v18/`, `v19-v20/`, `v21/` — run the `TiaLink.exe` from the folder matching your TIA Portal version |
 | Simulation or download tools fail | S7-PLCSIM Advanced not installed, not started, or no virtual instance running; the PLCSIM virtual adapter may also need to be selected as the PC/PG interface |
 | Everything works, then dies after a reboot | The gateway is not registered as a service; start it after TIA Portal is available on that machine |
 

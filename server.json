@@ -3,7 +3,7 @@
   "name": "io.github.tia-forge/tialink",
   "title": "TiaLink",
   "description": "TIA Portal MCP gateway: let any AI agent create blocks, write SCL, compile and simulate.",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "repository": {
     "url": "https://github.com/tia-forge/tialink",
     "source": "github"
@@ -13,7 +13,7 @@
     {
       "registryType": "npm",
       "identifier": "tialink-mcp",
-      "version": "0.1.1",
+      "version": "0.1.3",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"
